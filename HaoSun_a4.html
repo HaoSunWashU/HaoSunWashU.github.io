@@ -1,4 +1,5 @@
 <!-- Author: Hao Sun 2018 WUSTL-->
+<!-- State map is from :http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922 -->
 
 <!DOCTYPE html>
 <html>
@@ -6,11 +7,11 @@
 	<meta charset="utf-8">
 	<title>US Presidential Elections from 1940 to 2016</title>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
 	<!-- d3.tip
 	Copyright (c) 2013 Justin Palmer
 	Tooltips for d3.js SVG visualizations -->
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-
 	<style>
 		div.tooltip{
 			position: absolute;
@@ -48,12 +49,12 @@
 	</style>
 </head>
 <body>
+	<h3>Author: Hao Sun; US States Map is from :</h3>
+	<a href=http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922>Basic US State Map - D3</a>
 	<script type="text/javascript">
 		// create header
 		d3.select("body").append("h1").text("US Presidential Elections from 1940 to 2016").style("font-family", "Arial").style("Color", "black");
-		d3.select("body").append("h4").text("Choose the year you are interested in by click the circle in timeline; Detailed election information will show when you hover your mouse on a state below").style("font-family", "Arial").style("Color", "#464658");
-		
-
+		d3.select("body").append("h4").text("Instruction: Choose the year you are interested in by click the circle in timeline; Detailed election information will show when you hover your mouse on a state below").style("font-family", "Arial").style("Color", "#464658");
 
 		var width = 1200;
 		var width_map = 950;
@@ -278,12 +279,32 @@
 		timeline.append("text").attr("x", 22 + 19*60).attr("y", text_y).style("text-align", "center")
 			.style("text-anchor", "middle").style("font-family", "Arial").text("2016");
 
+		
+		//transition button for map or rect
+		var mapOrRect = 1; // 1: map ; 2: rect
+		var button_area = d3.select("body").append("div").attr("width", width).attr("height", 40).append("svg").attr("width", width_map).attr("height",40);
+		var button = button_area.append("rect").attr("x", 20).attr("y",0).attr("width",100).attr("height", 30).attr("rx", 4).attr("ry", 4).style("fill", "#a1e767").on("click", function(){
+					if(mapOrRect == 1){
+						mapOrRect = 0;
+					}else{
+						mapOrRect = 1;
+					}
+					updateDisplay();
+				});
+
+		var buttonText = button_area.append("text").attr("x", 130).attr("y", 20).style("text-align", "center").style("text-anchor", "left").style("fill", "#a1e767").text("Click the green button to change map");
+
 		//########## main svg ##########
 		var main_svg = d3.select("body").append("div").attr("width", width).attr("height", height);
 		var color_coding = main_svg.append("svg").attr("id", "color_coding").attr("width", width_map).attr("height", 50);
 		var image_area = main_svg.append("svg").attr("id", "image_area").attr("width", 250).attr("height", 570);
 		var map = main_svg.append("svg").attr("id", "map").attr("width", width_map).attr("height", height-50);
-		displayMap();
+		// var map_us = main_svg.append("svg").attr("id", "map").attr("width", width_map).attr("height", height-50);
+
+		// D3 Projection: adapted from http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922
+		var projection = d3.geoAlbersUsa().translate([width_map/2, (height-50)/2]).scale([1000]);     //translate([width_map/2, (height-50)/2])      
+        var path = d3.geoPath().projection(projection);  
+        displayMap();
 
 		//########## Color-coding ##########
 		//(Blue: D_Nominee)-60 to -50 (#172771); -50 to -40(#0221a3); -40 to -30(#0d3cfd); -30 to -20(#4065fd); -20 to -10(#8396fe); -10 to 0(#c6d1fe)
@@ -514,12 +535,73 @@
 		//display the electoral map  blue: #185dd1 red: #ce3721
 		function displayMap(){
 			map.remove();
-			map = main_svg.append("svg").attr("id", "map").attr("width", width_map).attr("height", height-80);
+			// map_us.remove();
+			map = main_svg.append("svg").attr("id", "map").attr("width", width_map).attr("height", height-50);
+			// map_us = d3.select("body").append("div").attr("width", width_map).attr("height", height-50).append("svg").attr("id", "map_us").attr("width", width_map).attr("height", height-50);
 
 			d3.csv("data/" + csv_name, function(error, data) {
   				if (error) throw error;
 
-  				map.selectAll("rect").data(data).enter().append("rect")
+  				//Us states map: adapted from http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922
+  				if(mapOrRect == 1){
+  					
+  					d3.json("us-states.json", function(error, json) {
+  					if (error) throw error;
+  					for(var i = 0; i < json.features.length; i++){
+  						for(var j = 0; j < data.length; j++){
+  							if(json.features[i].properties.name == data[j].State){
+  								json.features[i].properties.color = getColor(data[j].D_Percentage, data[j].R_Percentage);
+  								json.features[i].properties.Total_EV = data[j].Total_EV;
+  								json.features[i].properties.D_Nominee = data[j].D_Nominee;
+  								json.features[i].properties.D_Votes = data[j].D_Votes;
+  								json.features[i].properties.D_Percentage = data[j].D_Percentage;
+  								json.features[i].properties.R_Nominee = data[j].R_Nominee;
+  								json.features[i].properties.R_Votes = data[j].R_Votes;
+  								json.features[i].properties.R_Percentage = data[j].R_Percentage;
+  								// console.log(json.features[i].properties.color);
+  							}
+  						}
+  					}
+
+  					map.selectAll("path").data(json.features).enter().append("path").attr("d", path).style("stroke", "#000").style("stroke-width", "1").style("fill", function(d) {
+						console.log(d.properties.color);
+						if(d.properties.color == null){
+							return "#ffffff";
+						}
+						return d.properties.color;
+					}).on("mouseover", function(d){
+  						hoverTool.transition().duration(500).style("opacity", .9);
+  					
+  						if(+d.properties.D_Percentage > +d.properties.R_Percentage){
+  							hoverTool.html(
+  								"<h3 style=\"color:#185dd1; text-align:left;\">" + d.properties.name + "</h3>" +
+  								"<h4 style=\"text-align:left;\"> Electoral Votes: " + d.properties.Total_EV + "</h4>" +
+  								"<ul style=\"font-size: 75%;\"><li style=\"color:#185dd1; font-size:8; text-align:left;\">" + d.properties.D_Nominee + ": " + d.properties.D_Votes + "(" + d.properties.D_Percentage + "%)</li>" +
+  								"<li style=\"color:#ce3721; font-size:8; text-align:left;\">" + d.properties.R_Nominee + ": " + d.properties.R_Votes + "(" + d.properties.R_Percentage + "%)</li></ul>"
+  						)
+  						.style("left", (d3.event.pageX + 10) + "px")
+                    	.style("top", (d3.event.pageY - 180) + "px");
+
+  						// color = "#185dd1";
+  						}else{
+  							hoverTool.html(
+  								"<h3 style=\"color:#ce3721; text-align:left;\">" + d.properties.name + "</h3>" +
+  								"<h4 style=\"text-align:left;\"> Electoral Votes: " + d.properties.Total_EV + "</h4>" +
+  								"<ul style=\"font-size: 75%;\"><li style=\"color:#185dd1; text-align:left;\">" + d.properties.D_Nominee + ": " + d.properties.D_Votes + "(" + d.properties.D_Percentage + "%)</li>" +
+  								"<li style=\"color:#ce3721; text-align:left;\">" + d.properties.R_Nominee + ": " + d.properties.R_Votes + "(" + d.properties.R_Percentage + "%)</li></ul>"
+  							)
+  							.style("left", (d3.event.pageX + 10) + "px")
+                    		.style("top", (d3.event.pageY - 180) + "px");
+  						}})
+  						.on("mouseout", function(d){
+  							hoverTool.transition().duration(500).style("opacity", 0);
+  						});
+					});
+  				}
+				
+
+  				if(mapOrRect == 0){
+  					map.selectAll("rect").data(data).enter().append("rect")
   				.attr("x", function(d){
   					return state_posX(d.State);
   				})
@@ -644,9 +726,10 @@
   				})
   				.on("mouseout", function(d){
   					hoverTool.transition().duration(500).style("opacity", 0);
-  				});;
+  				});
 
-  			});
+  				}
+			});
 		}
 
 
