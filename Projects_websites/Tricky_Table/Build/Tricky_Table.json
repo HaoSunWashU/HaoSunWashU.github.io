@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "milestone3",
+"dataUrl": "Tricky_Table.data.unityweb",
+"asmCodeUrl": "Tricky_Table.asm.code.unityweb",
+"asmMemoryUrl": "Tricky_Table.asm.memory.unityweb",
+"asmFrameworkUrl": "Tricky_Table.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
