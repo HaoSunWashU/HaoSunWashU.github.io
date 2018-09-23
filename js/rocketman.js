@@ -1,4 +1,3 @@
-//### START: Welcome Animation ###//
 //var container = document.querySelector('.container');
 var jetBubbles = document.getElementsByClassName('jetBubble');
 var rocketManSVG = document.querySelector('.rocketManSVG');
@@ -11,7 +10,7 @@ var badgeLink = document.querySelector('#badgeLink');
 
 TweenMax.to(astronaut, 0.05, {
   y:'+=4',
-  repeat:-1,
+  repeat:-1, 
   yoyo:true
 })
 var mainTimeline = new TimelineMax({repeat:-1}).seek(100);
@@ -26,8 +25,8 @@ function createJets(){
     }
   })
  //jet bubbles
-  for(var i = 0; i < jetBubbles.length; i++){
-    var jb = jetBubbles[i];
+  for(var i = 0; i < jetBubbles.length; i++){    
+    var jb = jetBubbles[i];    
     var tl = new TimelineMax({repeat:-1,repeatDelay:Math.random()}).timeScale(4);
     tl.to(jb, Math.random() + 1 , {
       attr:{
@@ -41,7 +40,7 @@ function createJets(){
       },
       ease:Linear.easeNone
     })
-
+    
     mainTimeline.add(tl, i/4)
   }
   //speed lines
@@ -59,7 +58,7 @@ function createJets(){
     .to(sl, 0.2, {
       drawSVG:'70% 100%',
       ease:Linear.easeNone
-    })
+    })  
     .to(sl, 0.05, {
       drawSVG:'100% 100%',
       ease:Linear.easeNone
@@ -69,14 +68,14 @@ function createJets(){
     });
 
     mainSpeedLinesTimeline.add(stl, i/23);
-}
+}  
   //stars
     for(var i = 0; i < 7; i++){
-
+    
     var sc = star.cloneNode(true);
     starContainer.appendChild(sc);
     var calc = (i+1)/2;
-
+   
     TweenMax.fromTo(sc, calc, {
       x:Math.random()*600,
       y:-30,
@@ -88,7 +87,7 @@ function createJets(){
       ease:Linear.easeNone
     })
   }
-
+  
   rocketManSVG.removeChild(star);
 }
 
@@ -115,5 +114,3 @@ TweenMax.staggerTo('.satellitePulse', 0.8, {
 }, 0.1)
 
 createJets();
-
-//TweenMax.globalTimeScale(0.50)
