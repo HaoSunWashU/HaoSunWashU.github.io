@@ -25,7 +25,7 @@
 	<link href="css/resume.min.css" rel="stylesheet">
 	<link href="css/text-cursor.css" rel="stylesheet">
 
-	<!-- Style for hovering Image in the page -->
+	<!-- Style for hovering Image in the page, should be minimized in the future-->
 	<style>
 
 	#hoverImg {
@@ -38,6 +38,21 @@
 		-ms-transform: scale(1.3); /* IE 9 */
 		-webkit-transform: scale(1.3); /* Safari 3-8 */
 		transform: scale(1.3);
+	}
+
+	#thank,#firstname{
+		color:#ea0b8c;
+		animation-name: colorchange;
+		animation-duration: 5s ;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes colorchange{
+		0%  {color: #4285F4;}
+		25% {color: #DB4437;}
+		50%	{color: #F4B400;}
+		75% {color: #0F9D58;}
+		100%{color: #4285F4;}
 	}
 
 	video{
@@ -343,7 +358,7 @@
 		<!-- About Section -->
 		<section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
 			<div class="my-auto">
-				<h1 class="mb-0">Hao
+				<h1 class="mb-0"><span id="firstname">Hao</span>
 					<span class="text-primary">Sun</span>
 				</h1>
 				<div class="subheading mb-5">6605 Clayton Ave · Saint Louis, MO 63139 · (314) 203-7217 ·
@@ -1044,7 +1059,7 @@
 
   		</p>
 
-  		<h2 style="color:#ea0b8c;">Thank you for visiting my page!</h4>
+  		<h2 id="thank">Thank you for visiting my page!</h4>
   			<!-- <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p> -->
   		</div>
   	</section>
