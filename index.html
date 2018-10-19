@@ -24,6 +24,7 @@
 	<!-- Custom styles for this template -->
 	<link href="css/resume.min.css" rel="stylesheet">
 	<link href="css/text-cursor.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/mute_button.css">
 
 	<!-- tab icon -->
 	<link rel="icon" href="icons/tabIcon.png">
@@ -67,6 +68,21 @@
 	}
 
 </style>
+
+<script type="text/javascript">
+	function enableMute() { 
+		var bgm = document.getElementById("BGM");
+	    bgm.muted = !bgm.muted;
+	}
+	// $(function() {                       
+	//   $(".mute-button").click(function() { 
+	//     $(this).toggleClass("active");    
+	//   });
+	// });
+
+</script>
+	
+
 </head>
 
 <body id="page-top">
@@ -113,7 +129,12 @@
 				</li>
 			</ul>
 		</div>
+
+		<!-- <button onclick="enableMute()" type="button" class="mute-button1">Mute sound</button> -->
+
+		<!-- <a id="mute_button" href="#" data-title="MUTE"></a> -->
 	</nav>
+
 
 	<div class="container-fluid p-0" style="margin-top: 0px;">
 		<!-- Welcome -->
@@ -361,7 +382,7 @@
 			<p  align="right">Thanks to Start Bootstrap, Kevin Lin and Chris Gannon</p>
 		</section>
 
-		<audio class="my-auto" src="Background_music/A_Little_Story.mp3" controls autoplay loop="true"></audio>
+		<audio id="BGM" class="my-auto" src="Background_music/A_Little_Story.mp3" controls autoplay loop="true"></audio>
 		<!-- About Section -->
 		<section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
 			<div class="my-auto">
@@ -1120,6 +1141,7 @@
   <script src="js/rocketman.js"></script>
   <script src="js/typing.js"></script>
   <script src="js/velocity.min.js"></script>
+  <script src="js/awesome_button.js"></script>
 
 </body>
 
