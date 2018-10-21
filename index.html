@@ -31,7 +31,7 @@
 	
 	<!-- Video related
 	<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
-    <script src="http://vjs.zencdn.net/c/video.js"></script> -->
+	<script src="http://vjs.zencdn.net/c/video.js"></script> -->
 
 	<!-- Style for hovering Image in the page, should be minimized in the future-->
 	<style>
@@ -72,7 +72,7 @@
 <script type="text/javascript">
 	function enableMute() { 
 		var bgm = document.getElementById("BGM");
-	    bgm.muted = !bgm.muted;
+		bgm.muted = !bgm.muted;
 	}
 	// $(function() {                       
 	//   $(".mute-button").click(function() { 
@@ -81,7 +81,7 @@
 	// });
 
 </script>
-	
+
 
 </head>
 
@@ -584,38 +584,104 @@
 	<div class="my-auto">
 		<h2 class="mb-5">Projects</h2>
 
-		<!-- ##### 1. #####-->
+		<!-- ##### 3. #####-->
 		<div class="resume-item d-flex flex-column flex-md-row mb-5">
-			<!-- left div-->
 			<div class="resume-content mr-auto">
-				<h3 class="mb-0">Tricky Table---A multi-player stand-alone battle game</h3>
-				<div class="subheading mb-3">Semester-length project in Game Development Course | team leader in a 6-member game development team</div>
+				<h3 class="mb-0">A Simple Shooting Game in Unity(C#)</h3>
+				<div class="subheading mb-3">Personal project</div>
 
 				<!-- list -->
 				<ul class="fa-ul">
-					<li><i class="fa-li fa fa-spinner fa-spin"></i>Organized weekly meeting for discussing project progress and deciding tasks for next step</li>
-					<li><i class="fa-li fa fa-spinner fa-spin"></i>Conceived the game name, modes and rules</li>
-					<li><i class="fa-li fa fa-spinner fa-spin"></i>Designed two game scenes and realized camera control</li>
+					<li><i class="fa-li fa fa-spinner fa-spin"></i>Applied RayCast to find hit point of bullet</li>
+					<li><i class="fa-li fa fa-spinner fa-spin"></i>Implemented audio and animation of gun</li>
+					<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized explosion using particle system</li>
 				</ul>
-				<!-- Projects_websites/Tricky_Table/Tricky_Table.html -->
-				<h5><a href="http://18.218.125.131/~Hao/Tricky_Table/" class="badge badge-primary">Demo</a>---Press this button to play the game</h5>
-				<h5><a href="https://drive.google.com/drive/folders/1-VxAk7EHavCTonQpB0-s32tE8KU45LEe?usp=sharing" class="badge badge-primary">Download</a>---Press this button to Download the game for Windows and Mac</h5>
-
-				<!-- images -->
-				<!-- <img src="img/Tricky_Table.jpg" class="rounded mx-auto d-block" alt="" style="width:300px;height:200px;"> -->
-				<!-- <img src="img/Tricky_Table1.gif" class="rounded mx-auto d-block" alt="" style="width:300px;height:200px;"> -->
 			</div>
-
-			<!-- right div -->
+			<!-- date -->
 			<div class="resume-date text-md-right">
-				<span class="text-primary">February 2018 - May 2018</span>
+				<span class="text-primary">March 2018</span>
 			</div>
 		</div>
 
-		<!-- Images slideshow-->
-		<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
+		<!-- Video -->
+		<div class="resume-item d-flex flex-column flex-md-row mb-5">
+			<div class="embed-responsive embed-responsive-16by9">
+        		<!-- <video class="video-js vjs-default-skin" controls poster="" style="width:80%;height:auto;">
+        			<source src="video/shooting.flv" type="video/x-flv">
+        			</video> -->
 
-			<!-- Indicators -->
+        		<video class="embed-responsive-item" controls poster="" style="width:95%;height:auto;">
+        			<source src="video/shooting.mp4" type="video/mp4">
+        		</video>
+        	</div>
+        </div>
+
+
+        <!-- ##### 4. #####-->
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        	<div class="resume-content mr-auto">
+        		<h3 class="mb-0">ConnectU---A real-time messaging ios app</h3>
+        		<div class="subheading mb-3">Final Project in Mobile Applications Development Course</div>
+
+        		<!-- list -->
+        		<ul class="fa-ul">
+        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Led a 4-member app development team, used GitHub/Bitbucket to do the teamwork</li>
+        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Designed UI of welcome, login, register, chatting, contacts and profile views in Xcode using Swift</li>
+        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Established users and messages database using Firebase, connected databases and app using Firebase APIs and JSON</li>
+        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized user login, register, profile modification function within Xcode with the help of Firebase API</li>
+        		</ul>
+
+        		<h5><a href="https://github.com/HaoSunWashU/ConnectU" class="badge badge-primary">Download</a>---source code of ConnectU</h5>
+        	</div>
+        	<!-- date -->
+        	<div class="resume-date text-md-right">
+        		<span class="text-primary">October 2017 - December 2017</span>
+        	</div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        	<img id="hoverImg" src="img/ConnectU/ConnectU_welcome.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        	<img id="hoverImg" src="img/ConnectU/ConnectU_register.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        	<img id="hoverImg" src="img/ConnectU/ConnectU_login.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        	<img id="hoverImg" src="img/ConnectU/ConnectU_contacts.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        	<img id="hoverImg" src="img/ConnectU/ConnectU_profile.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        	<img id="hoverImg" src="img/ConnectU/ConnectU_chats.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        	<img id="hoverImg" src="img/ConnectU/ConnectU_chats1.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        </div>
+
+
+        <!-- ##### 1. #####-->
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        	<!-- left div-->
+        	<div class="resume-content mr-auto">
+        				<h3 class="mb-0">Tricky Table---A multi-player stand-alone battle game</h3>
+        				<div class="subheading mb-3">Semester-length project in Game Development Course | team leader in a 6-member game development team</div>
+
+        				<!-- list -->
+        				<ul class="fa-ul">
+        					<li><i class="fa-li fa fa-spinner fa-spin"></i>Organized weekly meeting for discussing project progress and deciding tasks for next step</li>
+        					<li><i class="fa-li fa fa-spinner fa-spin"></i>Conceived the game name, modes and rules</li>
+        					<li><i class="fa-li fa fa-spinner fa-spin"></i>Designed two game scenes and realized camera control</li>
+        				</ul>
+        				<!-- Projects_websites/Tricky_Table/Tricky_Table.html -->
+        				<h5><a href="http://18.218.125.131/~Hao/Tricky_Table/" class="badge badge-primary">Demo</a>---Press this button to play the game</h5>
+        				<h5><a href="https://drive.google.com/drive/folders/1-VxAk7EHavCTonQpB0-s32tE8KU45LEe?usp=sharing" class="badge badge-primary">Download</a>---Press this button to Download the game for Windows and Mac</h5>
+
+        				<!-- images -->
+        				<!-- <img src="img/Tricky_Table.jpg" class="rounded mx-auto d-block" alt="" style="width:300px;height:200px;"> -->
+        				<!-- <img src="img/Tricky_Table1.gif" class="rounded mx-auto d-block" alt="" style="width:300px;height:200px;"> -->
+        			</div>
+
+        			<!-- right div -->
+        			<div class="resume-date text-md-right">
+        				<span class="text-primary">February 2018 - May 2018</span>
+        			</div>
+        		</div>
+
+        		<!-- Images slideshow-->
+        		<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
+
+        			<!-- Indicators -->
             <!-- <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -676,70 +742,9 @@
         	<img id="hoverImg" src="img/President_Election/President_election2.png" class="rounded mx-auto d-block" alt="" style="width:40%;height:30%;">
         </div>
 
-        <!-- ##### 3. #####-->
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<div class="resume-content mr-auto">
-        		<h3 class="mb-0">A Simple Shooting Game in Unity(C#)</h3>
-        		<div class="subheading mb-3">Personal project</div>
+        
 
-        		<!-- list -->
-        		<ul class="fa-ul">
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Applied RayCast to find hit point of bullet</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Implemented audio and animation of gun</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized explosion using particle system</li>
-        		</ul>
-        	</div>
-        	<!-- date -->
-        	<div class="resume-date text-md-right">
-        		<span class="text-primary">March 2018</span>
-        	</div>
-        </div>
-
-        <!-- Video -->
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<div class="embed-responsive embed-responsive-16by9">
-        		<!-- <video class="video-js vjs-default-skin" controls poster="" style="width:80%;height:auto;">
-        			<source src="video/shooting.flv" type="video/x-flv">
-        		</video> -->
-
-        		<video class="embed-responsive-item" controls poster="" style="width:95%;height:auto;">
-        			<source src="video/shooting.mp4" type="video/mp4">
-        		</video>
-        	</div>
-        </div>
-
-
-        <!-- ##### 4. #####-->
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<div class="resume-content mr-auto">
-        		<h3 class="mb-0">ConnectU---A real-time messaging ios app</h3>
-        		<div class="subheading mb-3">Final Project in Mobile Applications Development Course</div>
-
-        		<!-- list -->
-        		<ul class="fa-ul">
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Led a 4-member app development team, used GitHub/Bitbucket to do the teamwork</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Designed UI of welcome, login, register, chatting, contacts and profile views in Xcode using Swift</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Established users and messages database using Firebase, connected databases and app using Firebase APIs and JSON</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized user login, register, profile modification function within Xcode with the help of Firebase API</li>
-        		</ul>
-
-        		<h5><a href="https://github.com/HaoSunWashU/ConnectU" class="badge badge-primary">Download</a>---source code of ConnectU</h5>
-        	</div>
-        	<!-- date -->
-        	<div class="resume-date text-md-right">
-        		<span class="text-primary">October 2017 - December 2017</span>
-        	</div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<img id="hoverImg" src="img/ConnectU/ConnectU_welcome.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/ConnectU/ConnectU_register.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/ConnectU/ConnectU_login.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/ConnectU/ConnectU_contacts.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/ConnectU/ConnectU_profile.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/ConnectU/ConnectU_chats.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/ConnectU/ConnectU_chats1.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        </div>
+        
 
         <!-- ##### 5. #####-->
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
@@ -774,114 +779,114 @@
         		</video>
         	</div>
 
-	        <div class="embed-responsive embed-responsive-16by9">
-	        	<video class="embed-responsive-item" controls poster="" style="width:95%;height:auto;">
-	        		<source src="video/Information_Visualization_a2.MOV" type="video/mp4">
-	        	</video>
-	        </div>
-        </div>
-
-        <!-- ##### 6. #####-->
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<div class="resume-content mr-auto">
-        		<h3 class="mb-0">Refined iCAM06 HDR model--HDR image rendering</h3>
-        		<div class="subheading mb-3">Final Project in Computer Vision Course</div>
-
-        		<!-- list -->
-        		<ul class="fa-ul">
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Improved original iCAM06 model by replacing bilateral filter with guided filter</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized model using Python and Matlab</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Final report is finished by LaTex</li>
-        		</ul>
-
-        		<h5><a href="https://github.com/HaoSunWashU/CSE559_Computer-Vision" class="badge badge-primary">Download</a>---Final Report of Refined ICAM06 HDR model</h5>
+        	<div class="embed-responsive embed-responsive-16by9">
+        		<video class="embed-responsive-item" controls poster="" style="width:95%;height:auto;">
+        			<source src="video/Information_Visualization_a2.MOV" type="video/mp4">
+        			</video>
+        		</div>
         	</div>
-        	<!-- date -->
-        	<div class="resume-date text-md-right">
-        		<span class="text-primary">October 2017 - December 2017</span>
+
+        	<!-- ##### 6. #####-->
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<div class="resume-content mr-auto">
+        			<h3 class="mb-0">Refined iCAM06 HDR model--HDR image rendering</h3>
+        			<div class="subheading mb-3">Final Project in Computer Vision Course</div>
+
+        			<!-- list -->
+        			<ul class="fa-ul">
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Improved original iCAM06 model by replacing bilateral filter with guided filter</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized model using Python and Matlab</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Final report is finished by LaTex</li>
+        			</ul>
+
+        			<h5><a href="https://github.com/HaoSunWashU/CSE559_Computer-Vision" class="badge badge-primary">Download</a>---Final Report of Refined ICAM06 HDR model</h5>
+        		</div>
+        		<!-- date -->
+        		<div class="resume-date text-md-right">
+        			<span class="text-primary">October 2017 - December 2017</span>
+        		</div>
         	</div>
-        </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<img id="hoverImg" src="img/HDR/peaklake_original.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
-        	<img id="hoverImg" src="img/HDR/PeckLakegf4.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
-        </div>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<img id="hoverImg" src="img/HDR/valley_original.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
-        	<img id="hoverImg" src="img/HDR/valley_processed.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
-        </div>
-
-        <!-- ##### 7. #####-->
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<div class="resume-content mr-auto">
-        		<h3 class="mb-0">Movie-Searching App</h3>
-        		<div class="subheading mb-3">Personal Project in Mobile Applications Development Course</div>
-
-        		<!-- list -->
-        		<ul class="fa-ul">
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>This app allows users to search movies, find informations about those movies, add to favorites or delete and watch relevant videos in YouTube</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized GUI by using built-in navigation bars, tab bars, and collection views</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Movie data is fetched from The Movie Database’s (TMDb) using its API and in JSON format</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Applied asychronised function to cache the images from TMDb to keep the user view unblocked</li>
-        		</ul>
-
-        		<h5><a href="https://github.com/HaoSunWashU/MovieSearch" class="badge badge-primary">Download</a>---Source Code of Movie-searching app</h5>
-
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<img id="hoverImg" src="img/HDR/peaklake_original.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
+        		<img id="hoverImg" src="img/HDR/PeckLakegf4.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
         	</div>
-        	<div class="resume-date text-md-right">
-        		<span class="text-primary">November 2017</span>
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<img id="hoverImg" src="img/HDR/valley_original.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
+        		<img id="hoverImg" src="img/HDR/valley_processed.jpg" class="rounded mx-auto d-block" alt="" style="width:400px;height:250px;">
         	</div>
-        </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<img id="hoverImg" src="img/Movie_Searching/Search Star wars-2.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/Movie_Searching/Detail view.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/Movie_Searching/Favorites View.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/Movie_Searching/Liking Posters View.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/Movie_Searching/After press poster in Poster View.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/Movie_Searching/Press movie clips and go to youtube.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        	<img id="hoverImg" src="img/Movie_Searching/Powered By view.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
-        </div>
+        	<!-- ##### 7. #####-->
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<div class="resume-content mr-auto">
+        			<h3 class="mb-0">Movie-Searching App</h3>
+        			<div class="subheading mb-3">Personal Project in Mobile Applications Development Course</div>
 
-        <!-- ##### 8. #####-->
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<div class="resume-content mr-auto">
-        		<h3 class="mb-0">Drawing App</h3>
-        		<div class="subheading mb-3">Personal Project in Mobile Applications Development Course</div>
+        			<!-- list -->
+        			<ul class="fa-ul">
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>This app allows users to search movies, find informations about those movies, add to favorites or delete and watch relevant videos in YouTube</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized GUI by using built-in navigation bars, tab bars, and collection views</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Movie data is fetched from The Movie Database’s (TMDb) using its API and in JSON format</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Applied asychronised function to cache the images from TMDb to keep the user view unblocked</li>
+        			</ul>
 
-        		<!-- list -->
-        		<ul class="fa-ul">
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>This app allows users to draw continuous lines by tapping and dragging</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized undo, redo and clear functions</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Users are able to adjust line thickness using slider</li>
-        			<li><i class="fa-li fa fa-spinner fa-spin"></i>Users can choose preset colors or RGB color by adjusting the sliders</li>
-        		</ul>
+        			<h5><a href="https://github.com/HaoSunWashU/MovieSearch" class="badge badge-primary">Download</a>---Source Code of Movie-searching app</h5>
 
-        		<h5><a href="https://github.com/HaoSunWashU/Drawing-App" class="badge badge-primary">Download</a>---Source Code of Drawing app</h5>
-
+        		</div>
+        		<div class="resume-date text-md-right">
+        			<span class="text-primary">November 2017</span>
+        		</div>
         	</div>
-        	<div class="resume-date text-md-right">
-        		<span class="text-primary">October 2017</span>
+
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<img id="hoverImg" src="img/Movie_Searching/Search Star wars-2.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        		<img id="hoverImg" src="img/Movie_Searching/Detail view.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        		<img id="hoverImg" src="img/Movie_Searching/Favorites View.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        		<img id="hoverImg" src="img/Movie_Searching/Liking Posters View.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        		<img id="hoverImg" src="img/Movie_Searching/After press poster in Poster View.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        		<img id="hoverImg" src="img/Movie_Searching/Press movie clips and go to youtube.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
+        		<img id="hoverImg" src="img/Movie_Searching/Powered By view.png" class="rounded mx-auto d-block" alt="" style="width:12%;height:20%;">
         	</div>
-        </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<img id="hoverImg" src="img/Drawing_App/Drawing_App.png" class="rounded mx-auto d-block" alt="" style="width:30%;height:65%;">
-        </div>
+        	<!-- ##### 8. #####-->
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<div class="resume-content mr-auto">
+        			<h3 class="mb-0">Drawing App</h3>
+        			<div class="subheading mb-3">Personal Project in Mobile Applications Development Course</div>
 
-        <!-- ##### 9. #####-->
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        	<div class="resume-content mr-auto">
-        		<h3 class="mb-0">More Projects (In progress)</h3>
-        		<!-- <div class="subheading mb-3">Personal Project in Mobile Applications Development Course</div> -->
+        			<!-- list -->
+        			<ul class="fa-ul">
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>This app allows users to draw continuous lines by tapping and dragging</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Realized undo, redo and clear functions</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Users are able to adjust line thickness using slider</li>
+        				<li><i class="fa-li fa fa-spinner fa-spin"></i>Users can choose preset colors or RGB color by adjusting the sliders</li>
+        			</ul>
 
-        		<!-- list -->
-        		<ul class="fa-ul">
-                  <!-- <li><i class="fa-li fa fa-spinner fa-spin"></i>This app allows users to draw continuous lines by tapping and dragging</li>
-                  <li><i class="fa-li fa fa-spinner fa-spin"></i>Realized undo, redo and clear functions</li>
-                  <li><i class="fa-li fa fa-spinner fa-spin"></i>Users are able to adjust line thickness using slider</li>
-                  <li><i class="fa-li fa fa-spinner fa-spin"></i>Users can choose preset colors or RGB color by adjusting the sliders</li> -->
-              </ul>
+        			<h5><a href="https://github.com/HaoSunWashU/Drawing-App" class="badge badge-primary">Download</a>---Source Code of Drawing app</h5>
+
+        		</div>
+        		<div class="resume-date text-md-right">
+        			<span class="text-primary">October 2017</span>
+        		</div>
+        	</div>
+
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<img id="hoverImg" src="img/Drawing_App/Drawing_App.png" class="rounded mx-auto d-block" alt="" style="width:30%;height:65%;">
+        	</div>
+
+        	<!-- ##### 9. #####-->
+        	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+        		<div class="resume-content mr-auto">
+        			<h3 class="mb-0">More Projects (In progress)</h3>
+        			<!-- <div class="subheading mb-3">Personal Project in Mobile Applications Development Course</div> -->
+
+        			<!-- list -->
+        			<ul class="fa-ul">
+		                  <!-- <li><i class="fa-li fa fa-spinner fa-spin"></i>This app allows users to draw continuous lines by tapping and dragging</li>
+		                  <li><i class="fa-li fa fa-spinner fa-spin"></i>Realized undo, redo and clear functions</li>
+		                  <li><i class="fa-li fa fa-spinner fa-spin"></i>Users are able to adjust line thickness using slider</li>
+		                  <li><i class="fa-li fa fa-spinner fa-spin"></i>Users can choose preset colors or RGB color by adjusting the sliders</li> -->
+		            </ul>
 
               <!-- <h5><a href="https://github.com/HaoSunWashU/Drawing-App" class="badge badge-primary">Download</a>---Source Code of Drawing app</h5> -->
 
